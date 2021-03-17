@@ -6,3 +6,10 @@ export function setCurPage(key) {
         payload: key,
     };
 }
+
+export function toggleDrawer(bol) {
+    return {
+        type: Constant.TOGGLE_DRAWER,
+        payload: bol,
+    };
+}

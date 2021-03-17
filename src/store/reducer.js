@@ -9,6 +9,10 @@ export default function rootReducer(state=initialState, action){
                 cur_page: action.payload
             })
         //  ============== 1. Home ==============  //
+        case Constant.TOGGLE_DRAWER:
+            return Object.assign({}, state, {
+                menuSwitch: action.payload
+            })
         default:
             return state;
     }
