@@ -1,6 +1,6 @@
 {
-  "name": "94wogus.blog",
-  "version": "0.2.0",
+  "name": "tedxhanyangu_react",
+  "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@babel/core": "7.9.0",
@@ -156,6 +156,7 @@
     "@api": "src/utils/api",
     "@assets": "src/assets",
     "@image": "src/assets/image",
+    "@logo": "src/assets/logo",
     "@store": "src/store",
     "@components": "src/components",
     "@views": "src/views"
