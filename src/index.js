@@ -14,9 +14,22 @@ import Header from "@components/common/Header"
 import LeftMenu from "@components/common/LeftMenu"
 import Footer from "@components/common/Footer"
 
+// Toast
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import '@assets/style/common.css';
 import '@assets/style/desktop.scss';
+
+import SwiperCore, { EffectCube, Pagination, Scrollbar } from 'swiper';
+import 'swiper/swiper.scss';
+import 'swiper/components/navigation/navigation.scss';
+import 'swiper/components/pagination/pagination.scss';
+import 'swiper/components/scrollbar/scrollbar.scss';
+import 'swiper/components/effect-cube/effect-cube.scss';
+
+SwiperCore.use([EffectCube, Pagination, Scrollbar]);
+
 
 const App = () => {
     const history = createBrowserHistory();
@@ -58,6 +71,17 @@ const App = () => {
                 </div>
                 <Footer/>
             </BrowserRouter>
+            <ToastContainer 
+                position="top-right"
+                autoClose={2000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
         </Fragment>
     )
 }

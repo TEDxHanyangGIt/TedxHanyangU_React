@@ -3,7 +3,7 @@ import {withRouter} from "react-router-dom"
 
 import TEDxHanyangU8 from "@logo/TEDxHanyangU8.png"
 import Sns from "@components/Home/Sns"
-import main from "@data/main"
+import main from "@data/main.js"
 
 const Profile = (props) => {
     return (

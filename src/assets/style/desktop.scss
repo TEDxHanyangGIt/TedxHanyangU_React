@@ -193,4 +193,79 @@
             }
         }
     }
+    #talks{
+        height: calc(100vh - 70px - 10px - 70px - 5px - 5px);
+        @include flex-center;
+        .event-swiper{
+            width: 600px;
+            margin: 0px;
+            .event{
+                @include flex-center;
+                .poster{
+                    width: 600px;
+                    img{
+                        width: 600px;
+                    }
+                }
+            }
+        }
+        .event_info{
+            width: 320px;
+            margin-left: 80px;
+            @include flex-center($justifyContent:flex-start, $alignItems:flex-start, $direction:column);
+            p{
+                margin: 0px;
+            }
+            .title{
+                font-size: 30px;
+                font-family: Georgia,Times New Roman,Times,serif;
+                font-style: italic;
+                margin-bottom: 8px;
+            }
+            .subtitle{
+                font-size: 18px;
+                font-family: Georgia,Times New Roman,Times,serif;
+                font-style: italic;
+                margin-bottom: 15px;
+                color: #3A3B3C;
+                margin-left: 15px;
+            }
+            .title-bold{
+                font-weight: 900;
+            }
+            .lectures{
+                padding: 0px;
+                .lecture{
+                    padding-left: 0px;
+                    margin-bottom: 6px;
+                    @include flex-center($alignItems:flex-start, $direction:column);
+                    .lecture-title{
+                        font-size: 18px;
+                        font-family: Georgia,Times New Roman,Times,serif;
+                        font-style: italic;
+                        font-weight: 900;
+                        margin-bottom: 4px;
+                    }
+                    .speaker{
+                        font-size: 14px;
+                        font-weight: 600;
+                        font-family: Inter,Helvetica Neue,Helvetica,Arial,sans-serif;
+                        color: #3A3B3C;
+                        margin-left: 12px;
+                        .occupation{
+                            color: #888888;
+                            font-weight: 500;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #no_youtube{
+        margin: 0px 0px 0px 10px;
+        color: black;
+        font-family: Inter,Helvetica Neue,Helvetica,Arial,sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+    }
 }
