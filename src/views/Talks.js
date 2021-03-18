@@ -49,10 +49,12 @@ const Talks = (props) => {
                                 key={`speaker_${curEvent.eventNum}_${index}`}
                                 onClick={() => goYoutube(l)}
                                 button={true}
-                                
                             >
-                                <p className="lecture-title"> - {l.title}</p>
-                                <p className="speaker">{`${l.speaker}`}<span className="occupation"> ({l.occupation})</span></p>
+                                <span className="mark">-</span> 
+                                <div className="lecture-info">
+                                    <p className="lecture-title">{l.title}</p>
+                                    <p className="speaker">{`${l.speaker}`}<span className="occupation"> ({l.occupation})</span></p>
+                                </div>
                             </ListItem>
                         ))}
                     </List>
