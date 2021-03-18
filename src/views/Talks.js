@@ -3,13 +3,13 @@ import {withRouter} from "react-router-dom"
 
 import Container from "@components/common/Container"
 
-const About = (props) => {
+const Talks = (props) => {
     return (
-        <Container cur_page={"about"}>
-            <div id="about" className="main">
-                <div>About</div>
+        <Container cur_page={"talks"}>
+            <div id="talks" className="page">
+                <div>Talks</div>
             </div>
         </Container>
     )
 }
-export default withRouter(About);
+export default withRouter(Talks);

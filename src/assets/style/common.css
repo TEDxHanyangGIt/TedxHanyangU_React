@@ -6,10 +6,57 @@ body {
     overflow-x: hidden;
 }
 
+body::-webkit-scrollbar {
+    width: 8px;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: black;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
+body::-webkit-scrollbar-track {
+    background-color: #dedede;
+}
+
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+.main{
+    position: relative;
+    width: 100%;
+    min-height: calc(100vh - 70px - 10px - 70px - 5px - 5px);
+    background: #fcfcfc;
+}
 
+.page{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.page-enter {
+    position: relative;
+    opacity: 0;
+    transform: scale(1.1);
+}
+.page-enter-active {
+    position: absolute;
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 300ms, transform 300ms;
+}
+.page-exit {
+    position: relative;
+    opacity: 1;
+}
+.page-exit-active {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 300ms;
+}
 
 @font-face {
     font-family: 'NanumSquare';

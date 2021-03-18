@@ -1,6 +1,7 @@
-import React, {Fragment} from 'react';
+import React, {Fragment, useState, useEffect} from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Switch, Route} from 'react-router-dom';
+import { BrowserRouter, Route} from 'react-router-dom';
+import { CSSTransition } from 'react-transition-group'
 import { createBrowserHistory } from 'history';
 import { Provider } from "react-redux";
 
@@ -9,21 +10,54 @@ import * as serviceWorker from './serviceWorker';
 import routes from '@/router';
 import store from '@/store';
 
+import Header from "@components/common/Header"
+import LeftMenu from "@components/common/LeftMenu"
+import Footer from "@components/common/Footer"
+
+
 import '@assets/style/common.css';
 import '@assets/style/desktop.scss';
 
 const App = () => {
     const history = createBrowserHistory();
+    const [useDrawer, setUseDrawer] = useState(false)
+
+    useEffect(() => {
+        function handleResize() {
+            if(window.innerWidth > 1024){
+                setUseDrawer(false)
+            }else{
+                setUseDrawer(true)
+            }
+        }
+        window.addEventListener('resize', handleResize)
+        handleResize()
+    })
 
     return (
         <Fragment>
-            <Router history={history}>
-                <Switch>
-                {routes.map((r) => (
-                    <Route key={r.path} path={r.path} component={r.component} exact/>
+            <BrowserRouter history={history}>
+                <Header useDrawer={useDrawer}/>
+                {useDrawer? <LeftMenu />: <Fragment />}
+                <div className="main">
+                {routes.map(({name, path, Component}) => (
+                    <Route exact key={name} path={path}>
+                    {({ match }) => (
+                        <CSSTransition
+                            in={match != null}
+                            timeout={300}
+                            classNames="page"
+                            unmountOnExit
+                        >
+                            
+                            <Component />
+                        </CSSTransition>
+                    )}
+                    </Route>
                 ))}
-                </Switch>
-            </Router>
+                </div>
+                <Footer/>
+            </BrowserRouter>
         </Fragment>
     )
 }

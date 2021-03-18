@@ -7,10 +7,11 @@ import {Button} from '@material-ui/core';
 import {Menu, MenuOpen} from '@material-ui/icons';
 
 import logo2 from "@logo/TEDxHanyangU2.png"
+import HeaderMenu from "@components/common/HeaderMenu"
 
 const Header = (props) => {
     const dispatch = useDispatch();
-    const { menuSwitch, history } = props;
+    const { menuSwitch, history, useDrawer} = props;
 
     const goHome = () => {
         if (history.location.pathname !== "/" ){
@@ -27,12 +28,11 @@ const Header = (props) => {
             <Button className="logoWarp" onClick={goHome}>
                 <img src={logo2} alt="logo-img"></img>
             </Button>
-            <Button onClick={openDrawer}>
-                {menuSwitch
-                ?<MenuOpen />
-                :<Menu/>
-                }
-            </Button>
+            {useDrawer? 
+                <Button onClick={openDrawer}>
+                    {menuSwitch ? <MenuOpen /> : <Menu/>}
+                </Button>
+            : <HeaderMenu />}
         </div>
     );
 };

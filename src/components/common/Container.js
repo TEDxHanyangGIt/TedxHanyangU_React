@@ -1,11 +1,7 @@
-import React, {Fragment, useEffect} from 'react';
+import React, {useEffect, Fragment} from 'react';
 
 import { useDispatch } from 'react-redux';
 import { setCurPage } from '@store/action'
-
-import Header from "@components/common/Header"
-import Footer from "@components/common/Footer"
-import LeftMenu from "@components/common/LeftMenu"
 
 const Container = (props) => {
     const dispatch = useDispatch();
@@ -17,10 +13,7 @@ const Container = (props) => {
   
     return (
         <Fragment>
-            <Header />
-            <LeftMenu />
             {children}
-            <Footer />
         </Fragment>
     );
 }
