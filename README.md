@@ -6,6 +6,7 @@ master 브랜치에서 작업 하면 됩니다.
 ```
 git pull
 rm -rf ./docs
+yarn build
 mv ./build ./docs
 
 git add -A

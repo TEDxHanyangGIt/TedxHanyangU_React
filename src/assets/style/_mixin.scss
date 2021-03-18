@@ -71,6 +71,13 @@
     object-fit: cover;
 }
 
+@mixin fullWidth {
+    width: 100%;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;   
+}
+
 @mixin flex-center($justifyContent:center, $alignItems: center,$direction: row, ) {
     display: flex;
     justify-content: $justifyContent;

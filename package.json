@@ -157,6 +157,7 @@
     "@assets": "src/assets",
     "@image": "src/assets/image",
     "@logo": "src/assets/logo",
+    "@data": "src/assets/data",
     "@store": "src/store",
     "@components": "src/components",
     "@views": "src/views"

@@ -13,7 +13,7 @@ const Container = (props) => {
 
     useEffect(() => {
         dispatch(setCurPage(cur_page));
-    }, [cur_page])
+    }, [cur_page, dispatch])
   
     return (
         <Fragment>

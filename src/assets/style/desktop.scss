@@ -96,15 +96,45 @@
 
 
     #home{
-        .mainCard{
-            padding: 50px;
-            @include flex-center;
-            .cardImg{
-                @include flex-center;
-                img{
-                    @include cover-img($width: 30vw);
-                    border-radius: 15px;
-                };
+        .cardWrap{
+            @include fullWidth;
+            @include flex-center($justifyContent:flex-start);
+            padding: 50px 20vw;
+            background-color: black;
+            img{
+                @include cover-img($width: 400px);
+                border-radius: 15px;
+            };
+            .text{
+                @include flex-center($alignItems: flex-start, $direction:column);
+                span{
+                    margin: 5px 0px;
+                    color: white;
+                }
+                .title{
+                    font-size: 30px;
+                    font-family: "Inter,Helvetica Neue,Helvetica,Arial,sans-serif";
+                    color: white;
+                    font-weight: 900;
+                }
+                .italic{
+                    font-family: Georgia,Times New Roman,Times,serif;
+                    font-style: italic;
+                    margin-bottom: 0px;
+                }
+                .date{
+                    margin-top: 0px;
+                    margin-left: 10px;
+                    font-family: Inter,Helvetica Neue,Helvetica,Arial,sans-serif;
+                    font-size: 16px;
+                    font-weight: 700;
+                }
+                .place{
+                    font-family: Inter,Helvetica Neue,Helvetica,Arial,sans-serif;
+                    font-size: 16px;
+                    font-weight: 700;
+                    font-style: normal;
+                }
             }
 
             .profile{
